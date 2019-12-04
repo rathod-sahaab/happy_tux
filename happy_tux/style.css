@@ -1,0 +1,23 @@
+.card {
+  padding: 1em;
+  background: #fff;
+  border-radius: 21px;
+}
+
+.tile, .tilo {
+	background-image: url(res/penguin1t.svg);
+	margin: 5%;
+}
+
+.tile.bounty, .tilo.bounty {
+	background-image: url(res/penguin2t.svg);
+}
+
+#rules .tilo {
+	font-size: 100px;
+	display: inline-block;
+	border-color: #f33;
+}
+#rules .tilo.bounty {
+	border-color: #3f3;
+}

@@ -1,0 +1,267 @@
+:root {
+    /*CSS Variables*/
+    --large-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+        0 10px 10px rgba(0, 0, 0, 0.22);
+    --small-shadow: 0 10px 20px rgba(0, 0, 0, 0.19),
+        0 6px 6px rgba(0, 0, 0, 0.23);
+
+    /*Custom color variables*/
+    --my-grey: #212121;
+}
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: #04a777;
+    overflow: hidden;
+	font-family: 'Luckiest Guy', 'Montserrat', sans-serif;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+i.fa {
+    font-size: 3rem;
+    display: block;
+    padding-bottom: 0.15em;
+}
+#pause {
+    color: whitesmoke;
+    padding: 0.5em;
+    opacity: 1;
+    pointer-events: click;
+    transition: opacity 0.25s;
+}
+#pause.invisible,
+*.invisible {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.title-card {
+    margin: 1em;
+    padding: 1.2em;
+    padding-bottom: 0.7em;
+
+    color: white;
+    background: #ffae0c;
+    border-radius: 5px;
+    box-shadow: var(--small-shadow);
+}
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    flex-wrap: wrap;
+}
+#clock {
+    height: 9px;
+    position: fixed;
+    bottom: 0;
+}
+#clock.animated {
+    animation-name: shorten-green-red;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+    /* paused till play button pressed */
+    animation-timing-function: linear;
+}
+#clock.playing {
+    animation-play-state: running;
+}
+@keyframes shorten-green-red {
+    0% {
+        background-color: hsl(123, 100%, 50%);
+        width: 100%;
+    }
+    50% {
+        background-color: hsl(60, 100%, 50%);
+        width: 50%;
+    }
+    100% {
+        background-color: hsl(0, 100%, 50%);
+        width: 0%;
+    }
+}
+
+h1 {
+    font-family: 'Luckiest Guy', 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+#housing {
+    width: 100vmin;
+    height: 100vmin;
+
+    max-width: 440px;
+    max-height: 440px;
+
+    margin: auto;
+    position: relative;
+}
+#terminal {
+    width: 100%;
+    height: 100%;
+    padding: 0.6rem;
+
+    display: grid;
+    justify-items: center;
+    align-items: center;
+
+    grid-template-columns: repeat(3, 1fr);
+}
+.tile, .tilo{
+    position: relative;
+    top: 0;
+
+    width: 1em;
+    height: 1em;
+    /* set font-size of terminal to change width */
+
+    background: white;
+    background-size: cover;
+    background-repeat: none;
+
+    border: 0.04em solid white;
+    border-radius: 20%;
+
+    position: relative;
+    box-shadow: var(--small-shadow);
+    transition: all 0.25s ease-in-out;
+    animation: none;
+}
+.tile::before {
+    content: '';
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+
+    clip-path: inset(0 50% 0 0);
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.tile.poped {
+    top: -15vh;
+    opacity: 0;
+}
+.tile.vibrating {
+    animation: shake 0.3s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    transform: translateX(0);
+    backface-visibility: hidden;
+}
+
+@keyframes shake {
+    10%,
+    90% {
+        transform: translateX(-1px);
+    }
+
+    20%,
+    80% {
+        transform: translateX(2px);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: translateX(-4px);
+    }
+
+    40%,
+    60% {
+        transform: translateX(4px);
+    }
+}
+
+.text-center,
+h1,
+h2,
+h3 {
+    text-align: center;
+}
+
+#bus-stop {
+    color: var(--my-grey);
+    width: 91%;
+    height: 91%;
+    border-radius: 5%;
+	border-top: 0.5em solid white;
+	border-bottom: 0.5em solid white;
+    z-index: 5;
+    box-shadow: var(--large-shadow);
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background: white;
+    padding: 1.5em;
+
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    opacity: 1;
+    transition: all 0.25s ease-in-out;
+
+	overflow-y: auto;
+}
+#bus-stop .row {
+    color: var(--my-grey);
+}
+#bus-stop.off-screen {
+    top: 110vh;
+}
+#bus-stop.off-screen * {
+    pointer-events: none;
+}
+#rules {
+    overflow: auto;
+}
+
+/* Menu design of different states
+ * remove irrelavent actions
+ */
+#bus-stop.welcome #next,
+#bus-stop.welcome #retry,
+#bus-stop.welcome #result,
+#bus-stop.paused #next,
+#bus-stop.paused #result,
+#bus-stop.lost #play,
+#bus-stop.lost #next,
+#bus-stop.lost #result.time,
+#bus-stop.won #play,
+#bus-stop.completed #play,
+#bus-stop.completed #retry,
+#bus-stop.completed #next {
+    display: none;
+}
+
+#bus-stop.completed #result {
+	font-size: 32px;
+}
+
+#play,
+#retry,
+#next,
+#result {
+    text-align: center;
+    font-family: 'Luckiest Guy', 'Montserrat';
+}
+#result {
+    width: 100%;
+}
+#rules {
+	width: 100%;
+}
