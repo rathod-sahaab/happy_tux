@@ -1,92 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <title>Happy Tux : SFD 2k19</title>
-        <link rel="stylesheet" href="styles/common.css" media="all" />
-        <link rel="stylesheet" href="styles/header.css" media="all" />
-        <link rel="stylesheet" href="happy_tux/style.css" media="all" />
-        <link
-            href="https://fonts.googleapis.com/css?family=Luckiest+Guy|Montserrat:600|Titillium+Web&display=swap"
-            rel="stylesheet"
-        />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
-            media="all"
-        />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
-        />
-    </head>
-    <body>
-        <!-- Update headers everywhere -->
-        <header>
-            <a href="http://142.93.220.251/" id="logo">
-                <img src="res/glug_favicon.png" alt="GLUG NITH Logo" />
-                <span>GLUG NITH</span>
-            </a>
-            <span id="open-menu">menu</span>
-            <nav>
-                <ul>
-                    <li><a> Games </a></li>
-                    <li><a href="happy_tux.html">Happy Tux</a></li>
-                    <li><a href="distro_matcher.html">Distro Matcher</a></li>
-                    <li><a href="ancestree.html">Ancesstree</a></li>
-                    <li><a href="how_to.html">How to Play</a></li>
-                </ul>
-                <div id="close-menu">×</div>
-            </nav>
-        </header>
 
-        <div class="title-card">
-            <h1>Happy Tux</h1>
-        </div>
+<head>
+    <meta charset="UTF-8" />
+    <title>Happy Tux : SFD 2k19</title>
 
-        <div id="housing">
-            <div id="bus-stop">
-                <div id="result">
-                    <h3 class="status"></h3>
-                    <h1 class="time"></h1>
-					<br>
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta property="og:title" content="Happy Tux">
+    <meta property="og:site_name" content="Happy tux">
+    <meta property="og:url" content="https://rathod-sahaab.github.io/happy_tux">
+    <meta property="og:description" content="Fun Open Source Game ^_^">
+    <meta property="og:type" content="product">
+    <meta property="og:image" content="https://rathod-sahaab.github.io/happy_tux/penguin.png">
+
+    <link rel="stylesheet" href="styles/common.css" media="all" />
+    <link rel="stylesheet" href="styles/header.css" media="all" />
+    <link rel="stylesheet" href="happy_tux/style.css" media="all" />
+    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy|Montserrat:600|Titillium+Web&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" media="all" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+</head>
+
+<body>
+    <!-- Update headers everywhere -->
+    <header>
+        <a href="http://142.93.220.251/" id="logo">
+            <img src="res/glug_favicon.png" alt="GLUG NITH Logo" />
+            <span>GLUG NITH</span>
+        </a>
+        <span id="open-menu">menu</span>
+        <nav>
+            <ul>
+                <li><a> Games </a></li>
+                <li><a href="happy_tux.html">Happy Tux</a></li>
+                <li><a href="distro_matcher.html">Distro Matcher</a></li>
+                <li><a href="ancestree.html">Ancesstree</a></li>
+                <li><a href="how_to.html">How to Play</a></li>
+            </ul>
+            <div id="close-menu">×</div>
+        </nav>
+    </header>
+
+    <div class="title-card">
+        <h1>Happy Tux</h1>
+    </div>
+
+    <div id="housing">
+        <div id="bus-stop">
+            <div id="result">
+                <h3 class="status"></h3>
+                <h1 class="time"></h1>
+                <br>
+            </div>
+            <div class="row">
+                <div id="play">
+                    <i class="fa fa-play" aria-hidden="true"></i>
+                    play
                 </div>
-                <div class="row">
-                    <div id="play">
-                        <i class="fa fa-play" aria-hidden="true"></i>
-                        play
-                    </div>
-                    <div id="retry">
-                        <i class="fa fa-repeat" aria-hidden="true"></i>
-                        retry
-                    </div>
-                    <div id="next">
-                        <i class="fa fa-forward" aria-hidden="true"></i>
-                        next
-                    </div>
+                <div id="retry">
+                    <i class="fa fa-repeat" aria-hidden="true"></i>
+                    retry
                 </div>
-                <div id="rules">
-					<br>
-					<br>
-					<h1>- Rules -</h1>
-					<br>
-                    <h2>Click the Happy Tux</h2>
-					<br>
-                    <div class="row">
-						<span class="tilo"></span>
-						<span class="tilo bounty"></span>
-                    </div>
+                <div id="next">
+                    <i class="fa fa-forward" aria-hidden="true"></i>
+                    next
                 </div>
             </div>
-
-            <div id="terminal"></div>
+            <div id="rules">
+                <br>
+                <br>
+                <h1>- Rules -</h1>
+                <br>
+                <h2>Click the Happy Tux</h2>
+                <br>
+                <div class="row">
+                    <span class="tilo"></span>
+                    <span class="tilo bounty"></span>
+                </div>
+            </div>
         </div>
 
-        <div class="row">
-            <i id="pause" class="fa fa-pause" aria-hidden="true"></i>
-        </div>
-        <div id="clock"></div>
-    </body>
-    <script src="scripts/header.js"></script>
-    <script src="happy_tux/script.js" type="module"></script>
+        <div id="terminal"></div>
+    </div>
+
+    <div class="row">
+        <i id="pause" class="fa fa-pause" aria-hidden="true"></i>
+    </div>
+    <div id="clock"></div>
+</body>
+<script src="scripts/header.js"></script>
+<script src="happy_tux/script.js" type="module"></script>
+
 </html>
